@@ -8,6 +8,7 @@ export interface Branch {
     scanIndex: number;
     commitsToScan: number;
     foundLeaks: string[];
+    commitUrl: string;
 }
 
 export interface Project {
@@ -31,3 +32,4 @@ export function readState(): State {
 export function writeState(state: State) {
     fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2));
 }
+

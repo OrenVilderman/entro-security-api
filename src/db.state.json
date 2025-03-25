@@ -9,7 +9,22 @@
           "name": "master",
           "scanIndex": 5,
           "commitsToScan": 5,
-          "foundLeaks": []
+          "foundLeaks": [],
+          "commitUrl": "https://api.github.com/repos/harelp60/my-project/commits"
+        }
+      ]
+    },
+    {
+      "id": 954806753,
+      "name": "entro-security-api",
+      "full_name": "OrenVilderman/entro-security-api",
+      "branches": [
+        {
+          "name": "main",
+          "scanIndex": 4,
+          "commitsToScan": 4,
+          "foundLeaks": [],
+          "commitUrl": "https://api.github.com/repos/OrenVilderman/entro-security-api/commits"
         }
       ]
     },
@@ -22,13 +37,15 @@
           "name": "main",
           "scanIndex": 48,
           "commitsToScan": 48,
-          "foundLeaks": []
+          "foundLeaks": [],
+          "commitUrl": "https://api.github.com/repos/OrenVilderman/express-on-typescript/commits"
         },
         {
           "name": "ts-express",
           "scanIndex": 50,
           "commitsToScan": 50,
-          "foundLeaks": []
+          "foundLeaks": [],
+          "commitUrl": "https://api.github.com/repos/OrenVilderman/express-on-typescript/commits"
         }
       ]
     },
@@ -39,15 +56,17 @@
       "branches": [
         {
           "name": "Test-unit-test-on-github-Actions",
-          "scanIndex": 97,
+          "scanIndex": 161,
           "commitsToScan": 161,
-          "foundLeaks": []
+          "foundLeaks": [],
+          "commitUrl": "https://api.github.com/repos/OrenVilderman/express-sql-learn-template/commits"
         },
         {
           "name": "main",
-          "scanIndex": 0,
+          "scanIndex": 161,
           "commitsToScan": 161,
-          "foundLeaks": []
+          "foundLeaks": [],
+          "commitUrl": "https://api.github.com/repos/OrenVilderman/express-sql-learn-template/commits"
         }
       ]
     },
@@ -58,9 +77,10 @@
       "branches": [
         {
           "name": "master",
-          "scanIndex": 0,
+          "scanIndex": 26,
           "commitsToScan": 26,
-          "foundLeaks": []
+          "foundLeaks": [],
+          "commitUrl": "https://api.github.com/repos/OrenVilderman/FinalQaProject.SVC/commits"
         }
       ]
     },
@@ -71,9 +91,10 @@
       "branches": [
         {
           "name": "master",
-          "scanIndex": 0,
+          "scanIndex": 3,
           "commitsToScan": 3,
-          "foundLeaks": []
+          "foundLeaks": [],
+          "commitUrl": "https://api.github.com/repos/OrenVilderman/First-code-refactoring/commits"
         }
       ]
     },
@@ -84,9 +105,10 @@
       "branches": [
         {
           "name": "master",
-          "scanIndex": 0,
+          "scanIndex": 21,
           "commitsToScan": 21,
-          "foundLeaks": []
+          "foundLeaks": [],
+          "commitUrl": "https://api.github.com/repos/OrenVilderman/FirstWebsite/commits"
         }
       ]
     },
@@ -97,9 +119,10 @@
       "branches": [
         {
           "name": "master",
-          "scanIndex": 0,
+          "scanIndex": 21,
           "commitsToScan": 21,
-          "foundLeaks": []
+          "foundLeaks": [],
+          "commitUrl": "https://api.github.com/repos/OrenVilderman/FreeCodeCampProject/commits"
         }
       ]
     },
@@ -110,9 +133,10 @@
       "branches": [
         {
           "name": "master",
-          "scanIndex": 0,
+          "scanIndex": 44,
           "commitsToScan": 44,
-          "foundLeaks": []
+          "foundLeaks": [],
+          "commitUrl": "https://api.github.com/repos/OrenVilderman/HackeruHtmlSite/commits"
         }
       ]
     },
@@ -123,15 +147,17 @@
       "branches": [
         {
           "name": "Fixing-small-things",
-          "scanIndex": 0,
+          "scanIndex": 40,
           "commitsToScan": 40,
-          "foundLeaks": []
+          "foundLeaks": [],
+          "commitUrl": "https://api.github.com/repos/OrenVilderman/local-file-monitor/commits"
         },
         {
           "name": "main",
-          "scanIndex": 0,
+          "scanIndex": 40,
           "commitsToScan": 40,
-          "foundLeaks": []
+          "foundLeaks": [],
+          "commitUrl": "https://api.github.com/repos/OrenVilderman/local-file-monitor/commits"
         }
       ]
     },
@@ -142,15 +168,17 @@
       "branches": [
         {
           "name": "Fix-Typo-in-Readme",
-          "scanIndex": 0,
+          "scanIndex": 85,
           "commitsToScan": 85,
-          "foundLeaks": []
+          "foundLeaks": [],
+          "commitUrl": "https://api.github.com/repos/OrenVilderman/production-ready-calculator-api/commits"
         },
         {
           "name": "main",
-          "scanIndex": 0,
+          "scanIndex": 83,
           "commitsToScan": 83,
-          "foundLeaks": []
+          "foundLeaks": [],
+          "commitUrl": "https://api.github.com/repos/OrenVilderman/production-ready-calculator-api/commits"
         }
       ]
     },
@@ -161,15 +189,17 @@
       "branches": [
         {
           "name": "Adding_Imports_and_git.ignore",
-          "scanIndex": 0,
+          "scanIndex": 4,
           "commitsToScan": 4,
-          "foundLeaks": []
+          "foundLeaks": [],
+          "commitUrl": "https://api.github.com/repos/OrenVilderman/SimpleTestExample/commits"
         },
         {
           "name": "master",
-          "scanIndex": 0,
+          "scanIndex": 11,
           "commitsToScan": 11,
-          "foundLeaks": []
+          "foundLeaks": [],
+          "commitUrl": "https://api.github.com/repos/OrenVilderman/SimpleTestExample/commits"
         }
       ]
     },
@@ -180,9 +210,23 @@
       "branches": [
         {
           "name": "main",
-          "scanIndex": 0,
+          "scanIndex": 3,
           "commitsToScan": 3,
-          "foundLeaks": []
+          "foundLeaks": [
+            {
+              "commit": "4b0fc2d3f5e7ef51e873a6e91a5ee8596a9e51a6",
+              "committer": "Oren Vilderman",
+              "message": "this is a code leak",
+              "leakValue": "github_pat_1234567890abcdefghijklmnopqrstuvwxyzABCDE"
+            },
+            {
+              "commit": "f870af223a6044664d7a84e59a1b02ad7a626621",
+              "committer": "Oren Vilderman",
+              "message": "This is json file leak",
+              "leakValue": "gho_ABC123def456ghi789jkl012mno345pqr678stu901vwx234, ghr_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ12"
+            }
+          ],
+          "commitUrl": "https://api.github.com/repos/OrenVilderman/TestLeak/commits"
         }
       ]
     },
@@ -193,21 +237,24 @@
       "branches": [
         {
           "name": "master",
-          "scanIndex": 0,
+          "scanIndex": 6,
           "commitsToScan": 6,
-          "foundLeaks": []
+          "foundLeaks": [],
+          "commitUrl": "https://api.github.com/repos/OrenVildermanPepperi/oren.addons.framework/commits"
         },
         {
           "name": "test.data.views",
-          "scanIndex": 0,
+          "scanIndex": 6,
           "commitsToScan": 6,
-          "foundLeaks": []
+          "foundLeaks": [],
+          "commitUrl": "https://api.github.com/repos/OrenVildermanPepperi/oren.addons.framework/commits"
         },
         {
           "name": "test.file.storage",
-          "scanIndex": 0,
+          "scanIndex": 6,
           "commitsToScan": 6,
-          "foundLeaks": []
+          "foundLeaks": [],
+          "commitUrl": "https://api.github.com/repos/OrenVildermanPepperi/oren.addons.framework/commits"
         }
       ]
     }

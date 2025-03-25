@@ -30,7 +30,8 @@ export async function initProjects(_req: Request, res: Response) {
                     name: branch.name,
                     scanIndex: 0,
                     commitsToScan: commitsCount,
-                    foundLeaks: []
+                    foundLeaks: [],
+                    commitUrl: `https://api.github.com/repos/${repo.full_name}/commits`
                 });
             }
 
@@ -63,50 +64,27 @@ export async function getProjectStatus(_req: Request, res: Response) {
 
 export async function scanProjects(_req: Request, res: Response) {
     try {
-        const reposResponse = await axios.get('https://api.github.com/user/repos', {
-            headers: { Authorization: `Bearer ${githubToken}` },
-        });
-
         const state: State = readState();
         const globalLimit = parseInt(_req.query.limit as string) || Number.MAX_SAFE_INTEGER;
         let totalScannedCommits = 0;
 
-        for (const repo of reposResponse.data) {
-            const branchesResponse = await axios.get(`https://api.github.com/repos/${repo.full_name}/branches`, {
-                headers: { Authorization: `Bearer ${githubToken}` },
-            });
-
-            const repoState = state.projects.find(p => p.id === repo.id) || { id: repo.id, name: repo.name, full_name: repo.full_name, branches: [] };
-            const branches = repoState.branches;
-
-            for (const branch of branchesResponse.data) {
-                const branchState = branches.find(b => b.name === branch.name) || { name: branch.name, scanIndex: 0, commitsToScan: await getBranchCommitsCount(repo.owner.login, repo.name, branch.name), foundLeaks: [] };
-
-                if (branchState.scanIndex < branchState.commitsToScan) {
-                    console.log(`Processing branch: ${branch.name} of repo: ${repo.full_name}`);
+        for (const project of state.projects) {
+            for (const branch of project.branches) {
+                if (branch.scanIndex < branch.commitsToScan) {
+                    console.log(`Processing branch: ${branch.name} of repo: ${project.full_name}`);
 
                     const remainingLimit = globalLimit - totalScannedCommits;
                     if (remainingLimit <= 0) break;
 
-                    const limit = Math.min(remainingLimit, branchState.commitsToScan - branchState.scanIndex);
-                    const { foundLeaks, lastScannedIndex } = await scanBranchCommits(repo.owner.login, repo.name, branch.name, limit);
+                    const limit = Math.min(remainingLimit, branch.commitsToScan - branch.scanIndex);
+                    const { foundLeaks, lastScannedIndex } = await scanBranchCommits(project.full_name.split('/')[0], project.name, branch.name, limit);
                     console.log(`Found leaks in branch '${branch.name}': ${foundLeaks.length}`);
 
-                    branchState.scanIndex += lastScannedIndex;
-                    // @ts-ignore
-                    branchState.foundLeaks.push(...foundLeaks);
+                    branch.scanIndex += lastScannedIndex;
+                    branch.foundLeaks.push(...foundLeaks);
 
                     totalScannedCommits += lastScannedIndex;
                 }
-
-                if (!branches.find(b => b.name === branch.name)) {
-                    // @ts-ignore
-                    branches.push(branchState);
-                }
-            }
-
-            if (!state.projects.find(p => p.id === repo.id)) {
-                state.projects.push(repoState);
             }
 
             if (totalScannedCommits >= globalLimit) break;

@@ -85,3 +85,12 @@ After scanning, if leaks are found, the response will contain details like:
 ## Areas for Improvement
 - The project contains **four instances of `// @ts-ignore`**, which should be removed by properly handling TypeScript type issues.
 
+## Resetting the Database
+- If a new GitHub token is used, the database must be reset manually.
+- Run the following command to reset the database:
+```sh
+npm run reset-db
+```
+- ⚠️ **Warning:** This will delete the existing database information, including pre-filled data for review.
+- After running this script, calling `http://localhost:3000/api/github/projects/status` will return an empty state.
+

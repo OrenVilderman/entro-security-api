@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const STATE_FILE = path.join(__dirname, '../db.state.json');
+const STATE_FILE = path.join(__dirname, '../../db.state.json');
 
 export interface Branch {
     name: string;

@@ -28,7 +28,7 @@ export async function scanBranchCommits(owner: string, repo: string, branch: str
     foundLeaks: any[],
     lastScannedIndex: number
 }> {
-    const dbPath = path.resolve(__dirname, '../db.state.json');
+    const dbPath = path.resolve(__dirname, '../../db.state.json');
     const dbState = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
 
     const project = dbState.projects.find((p: any) => p.name === repo);

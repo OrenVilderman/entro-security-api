@@ -1,47 +1,22 @@
-# Entro Security API
+# GitHub Leak Scanner
 
-This project is an API for managing and scanning GitHub repositories for security leaks. It is built using TypeScript, Express, and Axios.
 
-## Setup
 
-1. **Clone the repository**:
-   ```sh
-   git clone https://github.com/OrenVilderman/entro-security-api.git
-   cd entro-security-api
-   ```
+A tool to scan GitHub repositories for leaked secrets.
 
-2. **Install dependencies**:
-   ```sh
-   npm install
-   ```
+## Table of Contents
 
-3. **Create a `.env` file**:
-   ```sh
-   touch .env
-   ```
-
-4. **Add your GitHub Personal Access Token to the `.env` file**:
-   ```dotenv
-   GITHUB_TOKEN={Replace with your GitHub personal access token}
-   ```
-
-5. **Build the project**:
-   ```sh
-   npm run build
-   ```
-
-6. **Start the server**:
-   ```sh
-   npm start
-   ```
+- [Endpoints](#endpoints)
+- [Usage](#usage)
+- [Example Output](#example-output)
 
 ## Endpoints
 
-### Initialize Projects
+### Initialize Project List
 
 - **URL**: `/api/github/projects/init`
 - **Method**: `GET`
-- **Description**: Fetches the user's GitHub repositories and initializes the project state with branches and commit counts.
+- **Description**: Initializes the list of projects to scan.
 
 ### Get Project Status
 
@@ -49,31 +24,57 @@ This project is an API for managing and scanning GitHub repositories for securit
 - **Method**: `GET`
 - **Description**: Retrieves the current status of the projects, including branches and found leaks.
 
-### Scan Projects
+#### Example Response:
+
+```json
+{
+  "id": 954765988,
+  "name": "TestLeak",
+  "full_name": "OrenVilderman/TestLeak",
+  "branches": [
+    {
+      "name": "main",
+      "scanIndex": 3,
+      "commitsToScan": 3,
+      "foundLeaks": [
+        {
+          "commit": "4b0fc2d3f5e7ef51e873a6e91a5ee8596a9e51a6",
+          "committer": "Oren Vilderman",
+          "message": "this is a code leak",
+          "leakValue": "github_pat_1234567890abcdefghijklmnopqrstuvwxyzABCDE"
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Scan a Repository
 
 - **URL**: `/api/github/projects/scan`
 - **Method**: `GET`
-- **Description**: Scans the branches of the user's GitHub repositories for security leaks.
-- **Query Parameters**:
-  - `limit` (optional): The maximum number of commits to scan.
+- **Description**: Scans the repositories for leaks and updates the status.
 
-## .env File
+## Usage Example
 
-The `.env` file should contain the following environment variable:
+### Scan a Repository
 
-- `GITHUB_TOKEN`: Your GitHub Personal Access Token. This token is required to authenticate API requests to GitHub.
+To scan a repository for leaks, run:
 
-Example `.env` file:
-```dotenv
-GITHUB_TOKEN=your_github_personal_access_token
+```sh
+curl -X GET "http://localhost:3000/api/github/projects/scan"
 ```
 
-## Scripts
+## Example Output
 
-- **`npm run build`**: Compiles the TypeScript code to JavaScript.
-- **`npm start`**: Starts the server.
-- **`npm run dev`**: Starts the server in development mode using `nodemon`.
+After scanning, if leaks are found, the response will contain details like:
 
-## License
+```json
+{
+  "commit": "f870af223a6044664d7a84e59a1b02ad7a626621",
+  "committer": "Oren Vilderman",
+  "message": "This is json file leak",
+  "leakValue": "gho_ABC123def456ghi789jkl012mno345pqr678stu901vwx234, ghr_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ12"
+}
+```
 
-This project is licensed under the ISC License.

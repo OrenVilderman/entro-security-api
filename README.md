@@ -1,6 +1,6 @@
 # GitHub Leak Scanner
 
-
+![Leak Detection Example](./assets/leak-example.png)
 
 A tool to scan GitHub repositories for leaked secrets.
 

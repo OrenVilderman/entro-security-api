@@ -1,6 +1,6 @@
 {
   "name": "entro-security-api",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "This is project for Entro Security",
   "main": "src/index.ts",
   "scripts": {

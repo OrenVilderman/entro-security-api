@@ -78,3 +78,10 @@ After scanning, if leaks are found, the response will contain details like:
 }
 ```
 
+## Disclaimer
+- This project was completed **after the official time limit** of the test.
+- The mechanism that includes **direct commit URLs** (`commitUrl`) to allow easy access to the commit without requiring an additional API call was implemented **after the deadline**.
+
+## Areas for Improvement
+- The project contains **four instances of `// @ts-ignore`**, which should be removed by properly handling TypeScript type issues.
+
